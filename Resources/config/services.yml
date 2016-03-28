@@ -1,0 +1,17 @@
+parameters:
+  plehatron_limoncello.framework_integration.class: Plehatron\LimoncelloBundle\Integration\SymfonyFrameworkIntegration
+  plehatron_limoncello.controller_listener:         Plehatron\LimoncelloBundle\EventListener\ControllerListener
+
+services:
+
+  plehatron_limoncello.framework_integration:
+    class: %plehatron_limoncello.framework_integration.class%
+    calls:
+      - [setContainer, ["@service_container"]]
+
+  plehatron_limoncello.controller_listener:
+    class: %plehatron_limoncello.controller_listener%
+    calls:
+      - [setIntegration, ["@plehatron_limoncello.framework_integration"]]
+    tags:
+      - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
