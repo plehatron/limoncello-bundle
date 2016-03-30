@@ -1,6 +1,6 @@
 parameters:
   plehatron_limoncello.framework_integration.class: Plehatron\LimoncelloBundle\Integration\SymfonyFrameworkIntegration
-  plehatron_limoncello.controller_listener:         Plehatron\LimoncelloBundle\EventListener\ControllerListener
+  plehatron_limoncello.controller_listener:         Plehatron\LimoncelloBundle\EventListener\JsonApiControllerListener
 
 services:
 

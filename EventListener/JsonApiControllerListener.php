@@ -2,12 +2,11 @@
 
 namespace Plehatron\LimoncelloBundle\EventListener;
 
-use Neomerx\Limoncello\Http\AppServiceProviderTrait;
 use Neomerx\Limoncello\Http\FrameworkIntegration;
 use Plehatron\LimoncelloBundle\Controller\JsonApiController;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
-class ControllerListener
+class JsonApiControllerListener
 {
     /**
      * @var FrameworkIntegration
