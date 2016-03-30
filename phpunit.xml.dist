@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<phpunit bootstrap="./vendor/autoload.php"
+         backupGlobals="false"
+         backupStaticAttributes="false"
+         colors="true"
+         verbose="true"
+         convertErrorsToExceptions="true"
+         convertNoticesToExceptions="true"
+         convertWarningsToExceptions="true"
+         processIsolation="false"
+         stopOnFailure="false"
+         syntaxCheck="true">
+    <php>
+        <server name="KERNEL_DIR" value="Tests/Resources/app" />
+    </php>
+    <testsuites>
+        <testsuite name="All Unit">
+            <directory>./Tests/Unit/</directory>
+        </testsuite>
+        <testsuite name="All Integration">
+            <directory>./Tests/Integration/</directory>
+        </testsuite>
+    </testsuites>
+    <filter>
+        <whitelist>
+            <directory>./</directory>
+            <exclude>
+                <directory>./Tests</directory>
+                <directory>./vendor</directory>
+            </exclude>
+        </whitelist>
+    </filter>
+    <logging>
+        <log type="coverage-html" target="logs/coverage" charset="UTF-8" yui="true" highlight="true"/>
+        <log type="coverage-text" target="logs/coverage.txt"/>
+        <log type="coverage-clover" target="logs/clover.xml"/>
+    </logging>
+</phpunit>

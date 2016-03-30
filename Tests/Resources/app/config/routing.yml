@@ -1,0 +1,7 @@
+api_category_index:
+    path: /api/category
+    defaults: { _controller: ApiBundle:Category:index }
+
+api_category_show:
+    path: /api/category/{id}
+    defaults: { _controller: ApiBundle:Category:show }

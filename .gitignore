@@ -4,3 +4,5 @@
 composer.lock
 phpunit.xml
 /Tests/Resources/var/
+/Tests/Resources/app/cache/
+/Tests/Resources/app/logs/
