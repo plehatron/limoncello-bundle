@@ -2,22 +2,22 @@
 
 namespace Plehatron\LimoncelloBundle\EventListener;
 
-use Neomerx\Limoncello\Http\FrameworkIntegration;
+use Neomerx\Limoncello\Contracts\IntegrationInterface;
 use Plehatron\LimoncelloBundle\Controller\JsonApiController;
 use Symfony\Component\HttpKernel\Event\FilterControllerEvent;
 
 class JsonApiControllerListener
 {
     /**
-     * @var FrameworkIntegration
+     * @var IntegrationInterface
      */
     private $integration;
 
     /**
-     * @param FrameworkIntegration $integration
+     * @param IntegrationInterface $integration
      * @return $this
      */
-    public function setIntegration(FrameworkIntegration $integration)
+    public function setIntegration(IntegrationInterface $integration)
     {
         $this->integration = $integration;
         return $this;

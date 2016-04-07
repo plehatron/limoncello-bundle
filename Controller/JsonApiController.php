@@ -2,8 +2,8 @@
 
 namespace Plehatron\LimoncelloBundle\Controller;
 
+use Neomerx\Limoncello\Contracts\IntegrationInterface;
 use Neomerx\Limoncello\Http\AppServiceProviderTrait;
-use Neomerx\Limoncello\Http\FrameworkIntegration;
 use Neomerx\Limoncello\Http\JsonApiTrait;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
@@ -14,9 +14,9 @@ abstract class JsonApiController extends Controller
     use AppServiceProviderTrait;
 
     /**
-     * @param FrameworkIntegration $integration
+     * @param IntegrationInterface $integration
      */
-    public function callInitJsonApiSupport(FrameworkIntegration $integration)
+    public function callInitJsonApiSupport(IntegrationInterface $integration)
     {
         $this->registerResponses($integration);
         $this->registerCodecMatcher($integration);
