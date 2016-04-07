@@ -1,12 +1,12 @@
 <?php
 
-namespace Plehatron\LimoncelloBundle\Integration;
+namespace Plehatron\LimoncelloBundle\DependencyInjection;
 
 use Neomerx\Limoncello\Http\FrameworkIntegration;
 use Symfony\Component\DependencyInjection\ContainerAwareTrait;
 use Symfony\Component\HttpFoundation\Response;
 
-class SymfonyFrameworkIntegration extends FrameworkIntegration
+class SymfonyIntegration extends FrameworkIntegration
 {
     use ContainerAwareTrait;
 

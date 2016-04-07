@@ -1,15 +1,15 @@
 <?php
 
-namespace Plehatron\LimoncelloBundle\Tests\Integration\Unit;
+namespace Plehatron\LimoncelloBundle\Tests\Unit\DependencyInjection;
 
 use Mockery;
-use Plehatron\LimoncelloBundle\Integration\SymfonyFrameworkIntegration;
+use Plehatron\LimoncelloBundle\DependencyInjection\SymfonyIntegration;
 use stdClass;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\RequestStack;
 use Symfony\Component\HttpFoundation\Response;
 
-class SymfonyFrameworkIntegrationTest extends \PHPUnit_Framework_TestCase
+class SymfonyIntegrationTest extends \PHPUnit_Framework_TestCase
 {
     private function getIntegration()
     {
@@ -20,7 +20,7 @@ class SymfonyFrameworkIntegrationTest extends \PHPUnit_Framework_TestCase
         $container->shouldReceive('set')->withAnyArgs();
         $container->shouldReceive('has')->withArgs(['yep'])->andReturn(true);
         $container->shouldReceive('has')->withArgs(['nope'])->andReturn(false);
-        $integration = new SymfonyFrameworkIntegration();
+        $integration = new SymfonyIntegration();
         $integration->setContainer($container);
         return $integration;
     }

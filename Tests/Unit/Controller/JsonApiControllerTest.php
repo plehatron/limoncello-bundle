@@ -4,7 +4,7 @@ namespace Plehatron\LimoncelloBundle\Tests\Controller\Unit;
 
 use Mockery;
 use Plehatron\LimoncelloBundle\Controller\JsonApiController;
-use Plehatron\LimoncelloBundle\Integration\SymfonyFrameworkIntegration;
+use Plehatron\LimoncelloBundle\DependencyInjection\SymfonyIntegration;
 use ReflectionMethod;
 use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpKernel\Exception\HttpException;
@@ -12,13 +12,13 @@ use Symfony\Component\HttpKernel\Exception\HttpException;
 class JsonApiControllerTest extends \PHPUnit_Framework_TestCase
 {
     /**
-     * @return SymfonyFrameworkIntegration
+     * @return SymfonyIntegration
      */
     private function getIntegration()
     {
         $container = new Container();
         $container->setParameter('plehatron_limoncello', []);
-        $integration = new SymfonyFrameworkIntegration();
+        $integration = new SymfonyIntegration();
         $integration->setContainer($container);
         return $integration;
     }

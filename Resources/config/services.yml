@@ -1,17 +1,18 @@
 parameters:
-  plehatron_limoncello.framework_integration.class: Plehatron\LimoncelloBundle\Integration\SymfonyFrameworkIntegration
-  plehatron_limoncello.controller_listener:         Plehatron\LimoncelloBundle\EventListener\JsonApiControllerListener
+
+  plehatron_limoncello.integration.class:   Plehatron\LimoncelloBundle\DependencyInjection\SymfonyIntegration
+  plehatron_limoncello.controller_listener: Plehatron\LimoncelloBundle\EventListener\JsonApiControllerListener
 
 services:
 
-  plehatron_limoncello.framework_integration:
-    class: %plehatron_limoncello.framework_integration.class%
+  plehatron_limoncello.integration:
+    class: %plehatron_limoncello.integration.class%
     calls:
       - [setContainer, ["@service_container"]]
 
   plehatron_limoncello.controller_listener:
     class: %plehatron_limoncello.controller_listener%
     calls:
-      - [setIntegration, ["@plehatron_limoncello.framework_integration"]]
+      - [setIntegration, ["@plehatron_limoncello.integration"]]
     tags:
       - { name: kernel.event_listener, event: kernel.controller, method: onKernelController }
