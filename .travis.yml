@@ -5,14 +5,12 @@ php:
 - hhvm
 - 7
 matrix:
-  include:
-    - php: 5.5
-      script:
-      - vendor/bin/phpunit --coverage-text
   allow_failures:
     - php: 7
 before_script:
 - travis_retry composer self-update
 - travis_retry composer install --no-interaction --prefer-dist
 script:
-- vendor/bin/phpunit
+- vendor/bin/phpunit --coverage-text
+after_success:
+- bash <(curl -s https://codecov.io/bash)

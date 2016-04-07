@@ -7,7 +7,6 @@ use Plehatron\LimoncelloBundle\Controller\JsonApiController;
 use Plehatron\LimoncelloBundle\DependencyInjection\SymfonyIntegration;
 use ReflectionMethod;
 use Symfony\Component\DependencyInjection\Container;
-use Symfony\Component\HttpKernel\Exception\HttpException;
 
 class JsonApiControllerTest extends \PHPUnit_Framework_TestCase
 {
@@ -35,6 +34,9 @@ class JsonApiControllerTest extends \PHPUnit_Framework_TestCase
         $this->assertEquals($integration, $method->invoke($controller));
     }
 
+    /**
+     * @expectedException \Symfony\Component\HttpKernel\Exception\HttpException
+     */
     public function testGetResponse()
     {
         $integration = $this->getIntegration();
@@ -42,7 +44,6 @@ class JsonApiControllerTest extends \PHPUnit_Framework_TestCase
         $controller = new FixtureTestController();
         $controller->callInitJsonApiSupport($integration);
 
-        $this->expectException(HttpException::class);
         $this->assertEmpty('', $controller->getResponse([]));
     }
 }

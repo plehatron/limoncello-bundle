@@ -5,16 +5,16 @@ namespace Plehatron\LimoncelloBundle\Tests\Unit\DependencyInjection;
 use Mockery;
 use Neomerx\Limoncello\Config\Config as C;
 use Plehatron\LimoncelloBundle\DependencyInjection\PlehatronLimoncelloExtension;
-use Symfony\Component\Config\Definition\Exception\InvalidConfigurationException;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 
 class PlehatronLimoncelloExtensionTest extends \PHPUnit_Framework_TestCase
 {
+    /**
+     * @expectedException \Symfony\Component\Config\Definition\Exception\InvalidConfigurationException
+     */
     public function testLoadFail()
     {
         $cb = new ContainerBuilder();
-
-        $this->expectException(InvalidConfigurationException::class);
 
         $extension = new PlehatronLimoncelloExtension();
         $extension->load([], $cb);

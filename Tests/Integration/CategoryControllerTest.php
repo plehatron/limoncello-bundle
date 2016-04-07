@@ -4,7 +4,6 @@ namespace Plehatron\LimoncelloBundle\Tests\Integration;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 class CategoryControllerTest extends WebTestCase
 {
@@ -47,9 +46,11 @@ JSON;
         $this->assertEquals($expected, $body);
     }
 
+    /**
+     * @expectedException \Symfony\Component\HttpKernel\Exception\NotFoundHttpException
+     */
     public function testShowNotFoundAction()
     {
-        $this->expectException(NotFoundHttpException::class);
         $client = static::createClient();
         $client->request('GET', '/api/category/2');
     }
