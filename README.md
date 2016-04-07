@@ -3,6 +3,9 @@ LimoncelloBundle
 
 LimoncelloBundle is an integration bundle for [neomerx/json-api](https://github.com/neomerx/json-api) and Symfony.
 
+[![Build Status](https://travis-ci.org/plehatron/limoncello-bundle.svg?branch=master)](https://travis-ci.org/plehatron/limoncello-bundle)
+[![codecov.io](https://codecov.io/github/plehatron/limoncello-bundle/coverage.svg?branch=master)](https://codecov.io/github/plehatron/limoncello-bundle?branch=master)
+
 ## Install
 
 1. Download LimoncelloBundle using composer
