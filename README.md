@@ -44,7 +44,7 @@ plehatron_limoncello:
 
 ## Create and register JSON API Controllers
 
-API controllers should extend abstract `JsonApiController` class which has full JSON API support provided by the
+API controllers should extend abstract `\Plehatron\LimoncelloBundle\Controller\JsonApiController` class which has full JSON API support provided by the
 [neomerx/limoncello](https://github.com/neomerx/limoncello) package.
 
 See [CategoryController](Tests/Integration/Fixture/ApiBundle/Controller/CategoryController.php) file for an example on
