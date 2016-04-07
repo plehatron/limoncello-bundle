@@ -1,6 +1,6 @@
 <?php
 
-namespace Plehatron\LimoncelloBundle\Tests\Integration\Fixture;
+namespace Plehatron\LimoncelloBundle\Tests\Integration;
 
 use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 use Symfony\Component\HttpFoundation\Response;

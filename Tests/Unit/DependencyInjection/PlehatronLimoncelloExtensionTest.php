@@ -1,6 +1,6 @@
 <?php
 
-namespace Plehatron\LimoncelloBundle\Tests\DependencyInjection\Unit;
+namespace Plehatron\LimoncelloBundle\Tests\Unit\DependencyInjection;
 
 use Mockery;
 use Neomerx\Limoncello\Config\Config as C;

@@ -1,6 +1,6 @@
 <?php
 
-namespace Plehatron\LimoncelloBundle\Tests\EventListener\Unit;
+namespace Plehatron\LimoncelloBundle\Tests\Unit\EventListener;
 
 use Mockery;
 use Plehatron\LimoncelloBundle\Controller\JsonApiController;
